@@ -381,10 +381,6 @@ export default class App extends React.Component {
     });
   }
 
-  _handleFinishLoading = () => {
-    this.setState({ isLoadingComplete: true });
-  };
-
   async loginWithFacebook() {
     const { type, token } = await Expo.Facebook.logInWithReadPermissionsAsync('1709694409111214',
       { permissions: ['public_profile'] })
