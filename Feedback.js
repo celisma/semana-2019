@@ -46,11 +46,12 @@ export default class Feedback extends Component {
 
           <Content padder>
             <Form>
-              <TextInput multiline={true}
-                         numberOfLines={4}
-                         placeholder="opinión, comentarios y sugerencias"
-                         value={ this.state.body }
-                         onChangeText={(text) => this.setState({body: text})} />
+              <TextInput
+                multiline={true}
+                numberOfLines={4}
+                placeholder="opinión, comentarios y sugerencias"
+                value={ this.state.body }
+                onChangeText={(text) => this.setState({body: text})} />
 
               <View><Text style={styles.centerText}> Calificación: </Text></View>
 
@@ -63,13 +64,13 @@ export default class Feedback extends Component {
                 maxStars={5}
                 rating={this.state.starCount}
                 selectedStar={(rating) => this.onStarRatingPress(rating)}
-                fullStarColor={'#3F51B5'}
+                fullStarColor={'#BD005E'}
               />
             </Form>
           </Content>
 
           <View style={styles.feedbackButtonContainer}>
-            <Button full primary onPress={() => this.sendFeedback()} >
+            <Button full style={{backgroundColor: '#BD005E'}} onPress={() => this.sendFeedback()} >
               <Text>
                 Enviar
               </Text>

@@ -8,7 +8,7 @@ export default class Borrar extends React.Component {
     title: 'Borrar',
     headerTintColor: '#ffffff',
     headerStyle: {
-      backgroundColor: '#3F51B5',
+      backgroundColor: '#BD005E',
       elevation: 0,
       shadowOpacity: 0
     },

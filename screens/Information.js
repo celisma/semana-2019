@@ -12,7 +12,7 @@ export default class Information extends React.Component {
     title: 'Informacion',
     headerTintColor: '#ffffff',
     headerStyle: {
-      backgroundColor: '#3F51B5',
+      backgroundColor: '#BD005E',
       elevation: 0,
       shadowOpacity: 0
     },
@@ -81,7 +81,7 @@ export default class Information extends React.Component {
             <Text style={styles.infoBody}> { this.getObjectOfArray(infos, 0).body } </Text>
           </View>
           <View style={styles.feedbackButtonContainer}>
-            <Button full primary onPress={() => this.showOrHideFeedback()} >
+            <Button full style={{backgroundColor: '#BD005E'}} onPress={() => this.showOrHideFeedback()} >
               <Text>
                 comentarios y sugerencias
               </Text>
@@ -113,9 +113,10 @@ const styles = StyleSheet.create({
   },
   infoTitle: {
     fontSize: 20,
-    color: '#4A7AFF',
+    color: '#BD005E',
     lineHeight: 24,
     textAlign: 'center',
+    marginTop: 20,
     marginBottom: 10,
   },
   infoImageContainer: {
@@ -147,6 +148,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   feedbackButton: {
-    color: '#3F51B5',
+    color: '#BD005E',
   },
 });

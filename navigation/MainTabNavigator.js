@@ -13,6 +13,9 @@ const HomeStack = createStackNavigator({
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'Calendario',
+  tabBarOptions: {
+    activeTintColor: '#BD005E',
+  },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -30,7 +33,10 @@ const LinksStack = createStackNavigator({
 });
 
 LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+  tabBarLabel: 'Mis charlas',
+  tabBarOptions: {
+    activeTintColor: '#BD005E',
+  },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -45,6 +51,9 @@ const SettingsStack = createStackNavigator({
 
 SettingsStack.navigationOptions = {
   tabBarLabel: 'Información',
+  tabBarOptions: {
+    activeTintColor: '#BD005E',
+  },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}

@@ -12,7 +12,7 @@ export default class MyTalks extends React.Component {
     title: 'Mis charlas',
     headerTintColor: '#ffffff',
     headerStyle: {
-      backgroundColor: '#3F51B5',
+      backgroundColor: '#BD005E',
       elevation: 0,
       shadowOpacity: 0
     },
@@ -129,7 +129,7 @@ export default class MyTalks extends React.Component {
     return (
       <Container>
         <Tabs>
-          <Tab heading={ <TabHeading><Text>lun</Text></TabHeading> }>
+          <Tab heading={ <TabHeading style={{backgroundColor: '#BD005E'}}><Text>lun</Text></TabHeading> }>
             {
               this.state.userTalksMon.length != 0 ?
                 <ListView
@@ -140,7 +140,7 @@ export default class MyTalks extends React.Component {
                 <View style={styles.empty}><Text style={styles.emptyText}> { message } </Text></View>
             }
           </Tab>
-          <Tab heading={ <TabHeading><Text>mar</Text></TabHeading> }>
+          <Tab heading={ <TabHeading style={{backgroundColor: '#BD005E'}}><Text>mar</Text></TabHeading> }>
             {
               this.state.userTalksTue.length != 0 ?
                 <ListView
@@ -151,7 +151,7 @@ export default class MyTalks extends React.Component {
                 <View style={styles.empty}><Text style={styles.emptyText}> { message } </Text></View>
             }
           </Tab>
-          <Tab heading={ <TabHeading><Text>mie</Text></TabHeading> }>
+          <Tab heading={ <TabHeading style={{backgroundColor: '#BD005E'}}><Text>mie</Text></TabHeading> }>
             {
               this.state.userTalksWed.length != 0 ?
                 <ListView
@@ -162,7 +162,7 @@ export default class MyTalks extends React.Component {
                 <View style={styles.empty}><Text style={styles.emptyText}> { message } </Text></View>
             }
           </Tab>
-          <Tab heading={ <TabHeading><Text>jue</Text></TabHeading> }>
+          <Tab heading={ <TabHeading style={{backgroundColor: '#BD005E'}}><Text>jue</Text></TabHeading> }>
             {
               this.state.userTalksThu.length != 0 ?
                 <ListView
@@ -173,7 +173,7 @@ export default class MyTalks extends React.Component {
                 <View style={styles.empty}><Text style={styles.emptyText}> { message } </Text></View>
             }
           </Tab>
-          <Tab heading={ <TabHeading><Text>vie</Text></TabHeading> }>
+          <Tab heading={ <TabHeading style={{backgroundColor: '#BD005E'}}><Text>vie</Text></TabHeading> }>
             {
               this.state.userTalksFri.length != 0 ?
                 <ListView
@@ -185,7 +185,7 @@ export default class MyTalks extends React.Component {
             }
           </Tab>
 
-          <Tab heading={ <TabHeading><Text>sab</Text></TabHeading> }>
+          <Tab heading={ <TabHeading style={{backgroundColor: '#BD005E'}}><Text>sab</Text></TabHeading> }>
             {
               this.state.userTalksSat.length != 0 ?
                 <ListView

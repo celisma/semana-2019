@@ -24,7 +24,7 @@ export default class Schedule extends React.Component {
     title: 'Cronograma',
     headerTintColor: '#ffffff',
     headerStyle: {
-      backgroundColor: '#3F51B5',
+      backgroundColor: '#BD005E',
       elevation: 0,
       shadowOpacity: 0
     },
@@ -44,12 +44,12 @@ export default class Schedule extends React.Component {
     this.showOrHideTalkInfo = this.props.screenProps.showOrHideTalkInfo;
     this.sites              = this.props.screenProps.sites;
     this.talks              = this.props.screenProps.talks;
-    this.dataSourceTalksMon    = this.props.screenProps.dataSourceTalksMon;
-    this.dataSourceTalksTue    = this.props.screenProps.dataSourceTalksTue;
-    this.dataSourceTalksWed    = this.props.screenProps.dataSourceTalksWed;
-    this.dataSourceTalksThu    = this.props.screenProps.dataSourceTalksThu;
-    this.dataSourceTalksFri    = this.props.screenProps.dataSourceTalksFri;
-    this.dataSourceTalksSat    = this.props.screenProps.dataSourceTalksSat;
+    this.dataSourceTalksMon = this.props.screenProps.dataSourceTalksMon;
+    this.dataSourceTalksTue = this.props.screenProps.dataSourceTalksTue;
+    this.dataSourceTalksWed = this.props.screenProps.dataSourceTalksWed;
+    this.dataSourceTalksThu = this.props.screenProps.dataSourceTalksThu;
+    this.dataSourceTalksFri = this.props.screenProps.dataSourceTalksFri;
+    this.dataSourceTalksSat = this.props.screenProps.dataSourceTalksSat;
 
     console.disableYellowBox = true;
     console.warn('YellowBox is disabled.');
@@ -100,7 +100,7 @@ export default class Schedule extends React.Component {
     return (
       <Container>
           <Tabs>
-            <Tab heading={ <TabHeading><Text>lun</Text></TabHeading> }>
+            <Tab heading={ <TabHeading style={{backgroundColor: '#BD005E'}}><Text>lun</Text></TabHeading> }>
               <ListView
                 dataSource={this.props.screenProps.dataSourceTalksMon}
                 renderRow={(talk) => this.renderTimeYesOrNo(talk) }
@@ -108,7 +108,7 @@ export default class Schedule extends React.Component {
                 renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />} />
             </Tab>
 
-            <Tab heading={ <TabHeading><Text>mar</Text></TabHeading> }>
+            <Tab heading={ <TabHeading style={{backgroundColor: '#BD005E'}}><Text>mar</Text></TabHeading> }>
               <ListView
                 dataSource={this.props.screenProps.dataSourceTalksTue}
                 renderRow={(talk) => this.renderTimeYesOrNo(talk) }
@@ -116,7 +116,7 @@ export default class Schedule extends React.Component {
                 renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />} />
             </Tab>
 
-            <Tab heading={ <TabHeading><Text>mie</Text></TabHeading> }>
+            <Tab heading={ <TabHeading style={{backgroundColor: '#BD005E'}}><Text>mie</Text></TabHeading> }>
               <ListView
                 dataSource={this.props.screenProps.dataSourceTalksWed}
                 renderRow={(talk) => this.renderTimeYesOrNo(talk) }
@@ -124,7 +124,7 @@ export default class Schedule extends React.Component {
                 renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />} />
             </Tab>
 
-            <Tab heading={ <TabHeading><Text>jue</Text></TabHeading> }>
+            <Tab heading={ <TabHeading style={{backgroundColor: '#BD005E'}}><Text>jue</Text></TabHeading> }>
               <ListView
                 dataSource={this.props.screenProps.dataSourceTalksThu}
                 renderRow={(talk) => this.renderTimeYesOrNo(talk) }
@@ -132,7 +132,7 @@ export default class Schedule extends React.Component {
                 renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />} />
             </Tab>
 
-            <Tab heading={ <TabHeading><Text>vie</Text></TabHeading> }>
+            <Tab heading={ <TabHeading style={{backgroundColor: '#BD005E'}}><Text>vie</Text></TabHeading> }>
               <ListView
                 dataSource={this.props.screenProps.dataSourceTalksFri}
                 renderRow={(talk) => this.renderTimeYesOrNo(talk) }
@@ -140,7 +140,7 @@ export default class Schedule extends React.Component {
                 renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />} />
             </Tab>
 
-            <Tab heading={ <TabHeading><Text>sab</Text></TabHeading> }>
+            <Tab heading={ <TabHeading style={{backgroundColor: '#BD005E'}}><Text>sab</Text></TabHeading> }>
               <ListView
                 dataSource={this.props.screenProps.dataSourceTalksSat}
                 renderRow={(talk) => this.renderTimeYesOrNo(talk) }

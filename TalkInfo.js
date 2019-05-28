@@ -225,7 +225,7 @@ export default class TalkInfo extends Component {
 
     return(
       <Container>
-        <Header>
+        <Header style={{backgroundColor: '#BD005E'}}>
           <Left>
             <Button transparent onPress={() => this.props.showOrHideTalkInfo(this.props.talk)}>
               <Icon name='arrow-back' />
@@ -258,9 +258,10 @@ export default class TalkInfo extends Component {
               <View>
                 {
                   speaker.photo ?
-                    <Image source={{uri: this.getSpeakerPhoto(speaker.photo)}}
-                           style={{height: 200, width: null, flex: 1}}
-                           style={styles.infoImage} /> : <Text />
+                    <Image
+                      source={{uri: this.getSpeakerPhoto(speaker.photo)}}
+                      style={{height: 200, width: null, flex: 1}}
+                      style={styles.infoImage} /> : <Text />
                 }
               </View>
               <View style={styles.TalkSpeakerBioContainer}>
@@ -288,15 +289,15 @@ export default class TalkInfo extends Component {
           </View>
 
           <Button transparent full primary onPress={() => this.shareOnSocial()} >
-            <Text>
+            <Text style={{color: '#BD005E'}}>
               Compartir
             </Text>
           </Button>
         </Content>
-        <Button full primary={this.state.buttonText == 'Me interesa' ? true : false}
+        <Button full style={this.state.buttonText == 'Me interesa' ? styles.buttonColor : false}
                 full primary transparent={this.state.buttonText == 'Ya no me interesa' ? true : false}
                 onPress={() => this.addOrRemoveUserTalk(this.props.loggedUser, this.props.talk)} >
-          <Text>
+          <Text style={this.state.buttonText == 'Ya no me interesa' ? styles.buttonText : false }>
             { `${this.state.buttonText}` }
           </Text>
         </Button>
@@ -341,7 +342,7 @@ const styles = StyleSheet.create({
   },
   TalkTitle: {
 		fontSize: 20,
-    color: '#3F51B5',
+    color: '#BD005E',
 	},
   TalkBody: {
 		fontSize: 17,
@@ -379,6 +380,12 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   shareText: {
-    color: '#3F51B5',
+    color: '#BD005E',
+  },
+  buttonText: {
+    color: '#BD005E',
+  },
+  buttonColor: {
+    backgroundColor: '#BD005E',
   }
 });

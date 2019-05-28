@@ -345,32 +345,32 @@ export default class App extends React.Component {
 
   showOrHideTalkInfo(talk, backTo) {
     if(!this.state.talkInfoVisible) {
-      this.setState({talkInfoVisible: !this.state.talkInfoVisible,
-                     backTo: backTo,
-                     talk: {
-                     title: talk.title,
-                     description: talk.description,
-                     time: talk.time,
-                     day: talk.day,
-                     site: talk.site,
-                     speaker: talk.speaker,
-                     id: talk._key,
-                    }
-      });
+      this.setState({
+        talkInfoVisible: !this.state.talkInfoVisible,
+        backTo: backTo,
+        talk: {
+        title: talk.title,
+        description: talk.description,
+        time: talk.time,
+        day: talk.day,
+        site: talk.site,
+        speaker: talk.speaker,
+        id: talk._key,
+      }});
     }
     else {
-      this.setState({talkInfoVisible: !this.state.talkInfoVisible,
-                     backTo: backTo,
-                     talk: {
-                     title: '',
-                     description: '',
-                     time: '',
-                     day: '',
-                     site: '',
-                     speaker: '',
-                     id: talk._key,
-                    }
-      });
+      this.setState({
+        talkInfoVisible: !this.state.talkInfoVisible,
+        backTo: backTo,
+        talk: {
+        title: '',
+        description: '',
+        time: '',
+        day: '',
+        site: '',
+        speaker: '',
+        id: talk._key,
+      }});
     }
   }
 
@@ -501,7 +501,7 @@ export default class App extends React.Component {
                   <View style={styles.loginContainer}>
                     {
                       !this.state.logged ?
-                        <Button rounded block onPress={ () => this.loginWithFacebook() }>
+                        <Button full block onPress={ () => this.loginWithFacebook() }>
                           <Text> Ingresa con facebook </Text>
                         </Button> :
                         <View />
@@ -549,7 +549,7 @@ const styles = StyleSheet.create({
   },
   statusBarUnderlay: {
     height: 24,
-    backgroundColor: '#3F51B5',
+    backgroundColor: '#BD005E',
   },
   loginContainer: {
     flex: 1,
