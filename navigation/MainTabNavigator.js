@@ -1,60 +1,60 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import { TabNavigator, TabBarBottom } from 'react-navigation';
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
-import Colors from '../constants/Colors';
-
+import TabBarIcon from '../components/TabBarIcon';
 import Schedule from '../screens/Schedule';
 import MyTalks from '../screens/MyTalks';
 import Information from '../screens/Information';
 
-export default TabNavigator(
-  {
-    Cronograma: {
-      screen: Schedule,
-    },
-    Links: {
-      screen: MyTalks,
-    },
-    Information: {
-      screen: Information,
-    },
-  },
-  {
-    navigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused }) => {
-        const { routeName } = navigation.state;
-        let iconName;
-        switch (routeName) {
-          case 'Cronograma':
-            iconName = Platform.OS === 'ios' ?
-              `ios-information-circle${focused ? '' : '-outline'}` :
-              'md-calendar';
-            break;
-          case 'Links':
-            iconName = Platform.OS === 'ios' ?
-              `ios-link${focused ? '' : '-outline'}` :
-              'md-heart';
-            break;
-          case 'Information':
-            iconName = Platform.OS === 'ios' ?
-              `ios-options${focused ? '' : '-outline'}` :
-              'md-information-circle';
-        }
-        return (
-          <Ionicons
-            name={iconName}
-            size={28}
-            style={{ marginBottom: -3 }}
-            color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
-          />
-        );
-      },
-    }),
-    tabBarComponent: TabBarBottom,
-    tabBarPosition: 'bottom',
-    animationEnabled: true,
-    swipeEnabled: true,
-  }
-);
+const HomeStack = createStackNavigator({
+  Home: Schedule,
+});
+
+HomeStack.navigationOptions = {
+  tabBarLabel: 'Home',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-information-circle${focused ? '' : '-outline'}`
+          : 'md-information-circle'
+      }
+    />
+  ),
+};
+
+const LinksStack = createStackNavigator({
+  Links: MyTalks,
+});
+
+LinksStack.navigationOptions = {
+  tabBarLabel: 'Links',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+    />
+  ),
+};
+
+const SettingsStack = createStackNavigator({
+  Settings: Information,
+});
+
+SettingsStack.navigationOptions = {
+  tabBarLabel: 'Settings',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+    />
+  ),
+};
+
+export default createBottomTabNavigator({
+  HomeStack,
+  LinksStack,
+  SettingsStack,
+});

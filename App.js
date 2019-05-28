@@ -72,7 +72,13 @@ export default class App extends React.Component {
     });
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    await Font.loadAsync({
+      'Roboto': require('native-base/Fonts/Roboto.ttf'),
+      'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
+      ...Ionicons.font,
+    });
+
     this.listenForSites(this.sitesRef);
     this.listenForTalks(this.talksRef);
     this.listenForUsers(this.usersRef);
@@ -457,19 +463,22 @@ export default class App extends React.Component {
               {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
               {Platform.OS === 'android' && <View style={styles.statusBarUnderlay} />}
 
-              <AppNavigator talkInfoVisible={this.state.talkInfoVisible}
-                            showOrHideTalkInfo={this.showOrHideTalkInfo.bind(this)}
-                            loggedUser={this.state.loggedUser}
-                            sites={this.state.sites}
-                            talks={this.state.talks}
-                            userTalks={this.state.userTalks}
-                            dataSourceTalksMon={this.state.dataSourceTalksMon}
-                            dataSourceTalksTue={this.state.dataSourceTalksTue}
-                            dataSourceTalksWed={this.state.dataSourceTalksWed}
-                            dataSourceTalksThu={this.state.dataSourceTalksThu}
-                            dataSourceTalksFri={this.state.dataSourceTalksFri}
-                            dataSourceTalksSat={this.state.dataSourceTalksSat}
-                            dataSourceUserTalks={this.state.dataSourceUserTalks} />
+              <AppNavigator screenProps={{
+                talkInfoVisible: this.state.talkInfoVisible,
+                showOrHideTalkInfo: this.showOrHideTalkInfo.bind(this),
+                loggedUser: this.state.loggedUser,
+                sites: this.state.sites,
+                talks: this.state.talks,
+                userTalks: this.state.userTalks,
+                dataSourceTalksMon: this.state.dataSourceTalksMon,
+                dataSourceTalksTue: this.state.dataSourceTalksTue,
+                dataSourceTalksWed: this.state.dataSourceTalksWed,
+                dataSourceTalksThu: this.state.dataSourceTalksThu,
+                dataSourceTalksFri: this.state.dataSourceTalksFri,
+                dataSourceTalksSat: this.state.dataSourceTalksSat,
+                dataSourceUserTalks: this.state.dataSourceUserTalks,
+              }} />
+
               <View>
                 {
                 false &&
