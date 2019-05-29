@@ -137,7 +137,9 @@ export default class MyTalks extends React.Component {
                   renderRow={(userTalk) => this.renderTimeYesOrNo(userTalk, this.props.screenProps.talks, days[0]) }
                   enableEmptySections={true}
                   renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />} /> :
-                <View style={styles.empty}><Text style={styles.emptyText}> { message } </Text></View>
+                <View style={styles.empty}>
+                  <Text style={styles.emptyText}> { message } </Text>
+                </View>
             }
           </Tab>
           <Tab heading={ <TabHeading style={{backgroundColor: '#BD005E'}}><Text>mar</Text></TabHeading> }>
@@ -228,7 +230,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexWrap: 'wrap',
     flexDirection: 'row',
-    marginTop: Dimensions.get('window').width / 2,
+    marginTop: 50,
     marginLeft: 50,
     marginRight: 50,
   },
